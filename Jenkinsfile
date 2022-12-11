@@ -1,5 +1,6 @@
 pipeline{
     agent {label 'DOCKER'}
+    triggers { pollSCM('* * * * *') }
     environment{
         dockerhub=credentials('dockerid')
     }
@@ -25,7 +26,7 @@ pipeline{
         }
 		stage('Run container'){
             steps{
-                sh 'docker container run --name scr2 -d -p 8084:8080 nagvenkat/studentcoursesrestapi:1.0'
+                sh 'docker container run --name scr -d -p 8081:8080 nagvenkat/studentcoursesrestapi:1.0'
             }
         }
     }
