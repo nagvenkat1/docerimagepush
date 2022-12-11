@@ -25,7 +25,7 @@ pipeline{
         }
 		stage('Run container'){
             steps{
-                sh 'docker container run --name scr -d -p 8083:8080 nagvenkat/studentcoursesrestapi:1.0'
+                sh 'docker container run --name scr2 -d -p 8084:8080 nagvenkat/studentcoursesrestapi:1.0'
             }
         }
     }
